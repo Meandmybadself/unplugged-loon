@@ -1,0 +1,12 @@
+{
+  "name": "unplugged",
+  "version": "1.0.0",
+  "description": "Creates Spotify playlist of Power Loon tracks",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 node index.js",
+    "start": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

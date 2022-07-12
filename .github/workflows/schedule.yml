@@ -1,0 +1,23 @@
+name: "cron-action"
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "*/15 * * * *" # At every 15th minute
+
+jobs:
+  singleJobName:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm run start
+    env:
+      SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID}}
+      SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET}}
+      SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN}}
+      SPOTIFY_PLAYLIST_ID: ${{ secrets.SPOTIFY_PLAYLIST_ID}}
+      POWERLOON_PLAYLIST_URL: ${{ secrets.POWERLOON_PLAYLIST_URL}}
