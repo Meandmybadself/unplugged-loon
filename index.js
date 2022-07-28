@@ -116,7 +116,7 @@ const powerLoon2SpotifyId = async (artist, track) => {
     // Search for spotify track using artist and track.
     const response = await makeSpotifyRequest(`https://api.spotify.com/v1/search?q=artist:${artist}%20track:${track}&type=track&limit=1`)
     const { tracks } = response;
-    if (tracks?.items?.length) {
+    if ((tracks?.items || []).length) {
         return `spotify:track:${tracks.items[0].id}`;
     }
 }
